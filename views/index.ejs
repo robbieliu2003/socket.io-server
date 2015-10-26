@@ -1,0 +1,62 @@
+<% include header.ejs %>
+
+<div class="container container-xs">
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+                <span class="glyphicon glyphicon-headphones"></span>
+                &nbsp;&nbsp;&nbsp;聊天内容
+                <span id='my-nickname'>昵称</span>
+			</div>
+            <div class="panel-body chat-body">
+                <div class="msg-list-body">
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="padding: 10px 10px 10px;">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" id="input-edit" placeholder="请输入聊天内容">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="onClickSendMessage()">
+                        发送
+                    <span class="glyphicon glyphicon-send"></span>
+                </button>
+            </span>
+        </div>
+</nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only"></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">请设置聊天昵称</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <div class="alert alert-danger" role="alert" id="nickname-error" style="display: none">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            请填写昵称
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">昵称</span>
+                            <input type="text" id="nickname-edit" class="form-control" placeholder="请输入昵称">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="onClickApplyNickname()">应用昵称</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include footer.ejs %>
